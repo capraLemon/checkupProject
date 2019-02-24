@@ -7,4 +7,5 @@ RUN yarn && yarn build
 FROM nginx:alpine
 
 COPY /nginx/nginx.conf /etc/nginx/
-COPY --from=foryarn /frontend /frontend
+COPY --from=foryarn /frontend/dist /frontend/dist
+COPY --from=foryarn /frontend/public /frontend/public
